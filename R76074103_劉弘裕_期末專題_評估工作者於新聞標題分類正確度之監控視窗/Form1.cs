@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 
 namespace R76074103_劉弘裕_期末專題_評估工作者於新聞標題分類正確度之監控視窗
@@ -65,6 +66,29 @@ namespace R76074103_劉弘裕_期末專題_評估工作者於新聞標題分類�
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //insert data
+            Edit("INSERT INTO clickbait(id,worker_id,title,time,clickbait,title_id) VALUES('1',1,'a',10,1,1)");
+            Edit("INSERT INTO clickbait(id,worker_id,title,time,clickbait,title_id) VALUES('2',1,'b',10,1,2)");
+            Edit("INSERT INTO clickbait(id,worker_id,title,time,clickbait,title_id) VALUES('3',2,'a',10,1,1)");
+            Edit("INSERT INTO clickbait(id,worker_id,title,time,clickbait,title_id) VALUES('4',2,'b',10,0,2)");
+            Edit("INSERT INTO clickbait(id,worker_id,title,time,clickbait,title_id) VALUES('5',2,'c',10,0,3)");
+            Edit("INSERT INTO clickbait(id,worker_id,title,time,clickbait,title_id) VALUES('6',3,'a',10,0,1)");
+
+            Edit("INSERT INTO clickbait(id,worker_id,title,time,clickbait,title_id) VALUES('7',4,'a',10,1,1)");
+            Edit("INSERT INTO clickbait(id,worker_id,title,time,clickbait,title_id) VALUES('8',4,'a',10,0,1)");
+            Edit("INSERT INTO clickbait(id,worker_id,title,time,clickbait,title_id) VALUES('9',4,'a',10,1,1)");
+
+            //Query w1
+            string w1_c11= Query("SELECT clickbait FROM clickbait WHERE worker_id=1 AND title_id=1 ");
+            string w1_c12 = Query("SELECT count(*) FROM clickbait WHERE worker_id<>1 AND title_id=1 AND clickbait=1 ");
+            string w1_c13 = Query("SELECT count(*) FROM clickbait WHERE worker_id<>1 AND title_id=1 AND clickbait=0 ");
+            string w1_time = Query("SELECT sum(time) FROM clickbait WHERE worker_id=1");
+
+            //Query w2
+            string w2_time = Query("SELECT sum(time) FROM clickbait WHERE worker_id=2");
+
+            //Query w3
+            string w3_time = Query("SELECT sum(time) FROM clickbait WHERE worker_id=3");
 
             //lbl_line1
             lbl_line1.Text = "";
@@ -120,15 +144,48 @@ namespace R76074103_劉弘裕_期末專題_評估工作者於新聞標題分類�
             lbl_w2.Font = new Font("微軟正黑體", 9, FontStyle.Regular);
             lbl_w3.Font = new Font("微軟正黑體", 9, FontStyle.Regular);
 
+            //lbl_w1_time1-3
+            lbl_w1_time.Font = new Font("微軟正黑體", 9, FontStyle.Regular);
+            lbl_w2_time.Font = new Font("微軟正黑體", 9, FontStyle.Regular);
+            lbl_w3_time.Font = new Font("微軟正黑體", 9, FontStyle.Regular);
+            lbl_w1_time.Text = w1_time+" s";
+            lbl_w2_time.Text = w2_time + " s";
+            lbl_w3_time.Text = w3_time + " s";
+
+
             //w1_c1
             w1_c1_1.Text = "";
-            w1_c1_1.BackColor = Color.FromArgb(0, 255, 0);
-            w1_c1_2.Text = "3";
-            w1_c1_2.BackColor = Color.FromArgb(255, 0, 0);
+            if (w1_c11 == "1")
+            {
+                w1_c1_1.BackColor = Color.FromArgb(255, 0, 0);
+            }
+            else {
+                w1_c1_1.BackColor = Color.FromArgb(0, 255, 0);
+            }
+            w1_c1_2.Text = w1_c12;
             w1_c1_2.TextAlign = ContentAlignment.MiddleCenter;
-            w1_c1_3.Text = "4";
-            w1_c1_3.BackColor = Color.FromArgb(0, 255, 0);
+            if (w1_c12 =="0")
+            {
+                w1_c1_2.BackColor = Color.FromArgb(0, 255, 0);
+                w1_c1_2.Text = "";
+            }
+            else
+            {
+                w1_c1_2.BackColor = Color.FromArgb(255, 0, 0);
+            }
+            
+            w1_c1_3.Text = w1_c13;
             w1_c1_3.TextAlign = ContentAlignment.MiddleCenter;
+            if (w1_c13 == "0")
+            {
+                w1_c1_3.BackColor = Color.FromArgb(255, 0, 0);
+                w1_c1_3.Text = "";
+            }
+            else
+            {
+                w1_c1_3.BackColor = Color.FromArgb(0, 255, 0);
+            }
+            
 
             //w1_c2
             w1_c2_1.Text = "";
@@ -143,7 +200,56 @@ namespace R76074103_劉弘裕_期末專題_評估工作者於新聞標題分類�
 
         }
 
+        void Edit(string sqlstr)
+        {
+            try
+            {
+                SqlConnection cn = new SqlConnection();
+                cn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;" +
+                    "AttachDbFilename=|DataDirectory|Database1.mdf;" +
+                    "Integrated Security=True";
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(sqlstr, cn);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        string Query(string sqlstr)
+        {
+            try
+            {
+                SqlConnection cn = new SqlConnection();
+                cn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;" +
+                    "AttachDbFilename=|DataDirectory|Database1.mdf;" +
+                    "Integrated Security=True";
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(sqlstr, cn);
+                string result = cmd.ExecuteScalar().ToString();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return "0";
+            }
+        }
+
         private void w1_c2_1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.Show();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

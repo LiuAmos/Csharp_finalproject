@@ -55,6 +55,10 @@
             this.w1_c2_1 = new System.Windows.Forms.Label();
             this.w1_c2_2 = new System.Windows.Forms.Label();
             this.w1_c2_3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lbl_w1_time = new System.Windows.Forms.Label();
+            this.lbl_w2_time = new System.Windows.Forms.Label();
+            this.lbl_w3_time = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -304,11 +308,52 @@
             this.w1_c2_3.TabIndex = 26;
             this.w1_c2_3.Text = "c2";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(5, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(71, 28);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "Dataset";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lbl_w1_time
+            // 
+            this.lbl_w1_time.AutoSize = true;
+            this.lbl_w1_time.Location = new System.Drawing.Point(793, 126);
+            this.lbl_w1_time.Name = "lbl_w1_time";
+            this.lbl_w1_time.Size = new System.Drawing.Size(21, 18);
+            this.lbl_w1_time.TabIndex = 28;
+            this.lbl_w1_time.Text = "t1";
+            // 
+            // lbl_w2_time
+            // 
+            this.lbl_w2_time.AutoSize = true;
+            this.lbl_w2_time.Location = new System.Drawing.Point(793, 213);
+            this.lbl_w2_time.Name = "lbl_w2_time";
+            this.lbl_w2_time.Size = new System.Drawing.Size(21, 18);
+            this.lbl_w2_time.TabIndex = 29;
+            this.lbl_w2_time.Text = "t2";
+            // 
+            // lbl_w3_time
+            // 
+            this.lbl_w3_time.AutoSize = true;
+            this.lbl_w3_time.Location = new System.Drawing.Point(793, 298);
+            this.lbl_w3_time.Name = "lbl_w3_time";
+            this.lbl_w3_time.Size = new System.Drawing.Size(21, 18);
+            this.lbl_w3_time.TabIndex = 30;
+            this.lbl_w3_time.Text = "t3";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1226, 374);
+            this.Controls.Add(this.lbl_w3_time);
+            this.Controls.Add(this.lbl_w2_time);
+            this.Controls.Add(this.lbl_w1_time);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.w1_c2_3);
             this.Controls.Add(this.w1_c2_2);
             this.Controls.Add(this.w1_c2_1);
@@ -373,6 +418,10 @@
         private System.Windows.Forms.Label w1_c2_1;
         private System.Windows.Forms.Label w1_c2_2;
         private System.Windows.Forms.Label w1_c2_3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbl_w1_time;
+        private System.Windows.Forms.Label lbl_w2_time;
+        private System.Windows.Forms.Label lbl_w3_time;
     }
 }
 
