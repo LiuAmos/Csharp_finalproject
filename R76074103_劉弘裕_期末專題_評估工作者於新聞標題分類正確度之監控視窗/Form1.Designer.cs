@@ -59,6 +59,24 @@
             this.lbl_w1_time = new System.Windows.Forms.Label();
             this.lbl_w2_time = new System.Windows.Forms.Label();
             this.lbl_w3_time = new System.Windows.Forms.Label();
+            this.w1_check2 = new System.Windows.Forms.Label();
+            this.w1_check1 = new System.Windows.Forms.Label();
+            this.w2_c1_3 = new System.Windows.Forms.Label();
+            this.w2_c1_2 = new System.Windows.Forms.Label();
+            this.w2_c1_1 = new System.Windows.Forms.Label();
+            this.w2_c2_3 = new System.Windows.Forms.Label();
+            this.w2_c2_2 = new System.Windows.Forms.Label();
+            this.w2_c2_1 = new System.Windows.Forms.Label();
+            this.w2_c3_3 = new System.Windows.Forms.Label();
+            this.w2_c3_2 = new System.Windows.Forms.Label();
+            this.w2_c3_1 = new System.Windows.Forms.Label();
+            this.w3_c1_3 = new System.Windows.Forms.Label();
+            this.w3_c1_2 = new System.Windows.Forms.Label();
+            this.w3_c1_1 = new System.Windows.Forms.Label();
+            this.w2_check2 = new System.Windows.Forms.Label();
+            this.w2_check1 = new System.Windows.Forms.Label();
+            this.w3_check2 = new System.Windows.Forms.Label();
+            this.w3_check1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -76,9 +94,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(171, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 18);
+            this.label2.Size = new System.Drawing.Size(83, 18);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Anotation";
+            this.label2.Text = "Annotation";
             // 
             // label3
             // 
@@ -135,6 +153,7 @@
             this.btn_w1_exp.TabIndex = 7;
             this.btn_w1_exp.Text = "expand";
             this.btn_w1_exp.UseVisualStyleBackColor = true;
+            this.btn_w1_exp.Click += new System.EventHandler(this.btn_w1_exp_Click);
             // 
             // btn_w1_app
             // 
@@ -200,6 +219,7 @@
             this.btn_w3_exp.TabIndex = 13;
             this.btn_w3_exp.Text = "expand";
             this.btn_w3_exp.UseVisualStyleBackColor = true;
+            this.btn_w3_exp.Click += new System.EventHandler(this.btn_w3_exp_Click);
             // 
             // btn_w3_app
             // 
@@ -314,7 +334,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(71, 28);
             this.button1.TabIndex = 27;
-            this.button1.Text = "Dataset";
+            this.button1.Text = "Corpus";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -345,11 +365,173 @@
             this.lbl_w3_time.TabIndex = 30;
             this.lbl_w3_time.Text = "t3";
             // 
+            // w1_check2
+            // 
+            this.w1_check2.Location = new System.Drawing.Point(645, 137);
+            this.w1_check2.Name = "w1_check2";
+            this.w1_check2.Size = new System.Drawing.Size(60, 30);
+            this.w1_check2.TabIndex = 32;
+            this.w1_check2.Text = "check";
+            // 
+            // w1_check1
+            // 
+            this.w1_check1.Location = new System.Drawing.Point(645, 107);
+            this.w1_check1.Name = "w1_check1";
+            this.w1_check1.Size = new System.Drawing.Size(60, 30);
+            this.w1_check1.TabIndex = 31;
+            this.w1_check1.Text = "check";
+            // 
+            // w2_c1_3
+            // 
+            this.w2_c1_3.Location = new System.Drawing.Point(201, 220);
+            this.w2_c1_3.Name = "w2_c1_3";
+            this.w2_c1_3.Size = new System.Drawing.Size(30, 30);
+            this.w2_c1_3.TabIndex = 36;
+            this.w2_c1_3.Text = "c1";
+            // 
+            // w2_c1_2
+            // 
+            this.w2_c1_2.Location = new System.Drawing.Point(171, 220);
+            this.w2_c1_2.Name = "w2_c1_2";
+            this.w2_c1_2.Size = new System.Drawing.Size(30, 30);
+            this.w2_c1_2.TabIndex = 35;
+            this.w2_c1_2.Text = "c1";
+            // 
+            // w2_c1_1
+            // 
+            this.w2_c1_1.Location = new System.Drawing.Point(171, 190);
+            this.w2_c1_1.Name = "w2_c1_1";
+            this.w2_c1_1.Size = new System.Drawing.Size(60, 30);
+            this.w2_c1_1.TabIndex = 34;
+            this.w2_c1_1.Text = "c1";
+            // 
+            // w2_c2_3
+            // 
+            this.w2_c2_3.Location = new System.Drawing.Point(278, 220);
+            this.w2_c2_3.Name = "w2_c2_3";
+            this.w2_c2_3.Size = new System.Drawing.Size(30, 30);
+            this.w2_c2_3.TabIndex = 39;
+            this.w2_c2_3.Text = "c2";
+            // 
+            // w2_c2_2
+            // 
+            this.w2_c2_2.Location = new System.Drawing.Point(248, 220);
+            this.w2_c2_2.Name = "w2_c2_2";
+            this.w2_c2_2.Size = new System.Drawing.Size(30, 30);
+            this.w2_c2_2.TabIndex = 38;
+            this.w2_c2_2.Text = "c2";
+            // 
+            // w2_c2_1
+            // 
+            this.w2_c2_1.Location = new System.Drawing.Point(248, 190);
+            this.w2_c2_1.Name = "w2_c2_1";
+            this.w2_c2_1.Size = new System.Drawing.Size(60, 30);
+            this.w2_c2_1.TabIndex = 37;
+            this.w2_c2_1.Text = "c2";
+            // 
+            // w2_c3_3
+            // 
+            this.w2_c3_3.Location = new System.Drawing.Point(355, 220);
+            this.w2_c3_3.Name = "w2_c3_3";
+            this.w2_c3_3.Size = new System.Drawing.Size(30, 30);
+            this.w2_c3_3.TabIndex = 42;
+            this.w2_c3_3.Text = "c3";
+            // 
+            // w2_c3_2
+            // 
+            this.w2_c3_2.Location = new System.Drawing.Point(325, 220);
+            this.w2_c3_2.Name = "w2_c3_2";
+            this.w2_c3_2.Size = new System.Drawing.Size(30, 30);
+            this.w2_c3_2.TabIndex = 41;
+            this.w2_c3_2.Text = "c3";
+            // 
+            // w2_c3_1
+            // 
+            this.w2_c3_1.Location = new System.Drawing.Point(325, 190);
+            this.w2_c3_1.Name = "w2_c3_1";
+            this.w2_c3_1.Size = new System.Drawing.Size(60, 30);
+            this.w2_c3_1.TabIndex = 40;
+            this.w2_c3_1.Text = "c3";
+            // 
+            // w3_c1_3
+            // 
+            this.w3_c1_3.Location = new System.Drawing.Point(201, 303);
+            this.w3_c1_3.Name = "w3_c1_3";
+            this.w3_c1_3.Size = new System.Drawing.Size(30, 30);
+            this.w3_c1_3.TabIndex = 45;
+            this.w3_c1_3.Text = "c1";
+            // 
+            // w3_c1_2
+            // 
+            this.w3_c1_2.Location = new System.Drawing.Point(171, 303);
+            this.w3_c1_2.Name = "w3_c1_2";
+            this.w3_c1_2.Size = new System.Drawing.Size(30, 30);
+            this.w3_c1_2.TabIndex = 44;
+            this.w3_c1_2.Text = "c1";
+            // 
+            // w3_c1_1
+            // 
+            this.w3_c1_1.Location = new System.Drawing.Point(171, 273);
+            this.w3_c1_1.Name = "w3_c1_1";
+            this.w3_c1_1.Size = new System.Drawing.Size(60, 30);
+            this.w3_c1_1.TabIndex = 43;
+            this.w3_c1_1.Text = "c1";
+            // 
+            // w2_check2
+            // 
+            this.w2_check2.Location = new System.Drawing.Point(645, 220);
+            this.w2_check2.Name = "w2_check2";
+            this.w2_check2.Size = new System.Drawing.Size(60, 30);
+            this.w2_check2.TabIndex = 47;
+            this.w2_check2.Text = "check";
+            // 
+            // w2_check1
+            // 
+            this.w2_check1.Location = new System.Drawing.Point(645, 190);
+            this.w2_check1.Name = "w2_check1";
+            this.w2_check1.Size = new System.Drawing.Size(60, 30);
+            this.w2_check1.TabIndex = 46;
+            this.w2_check1.Text = "check";
+            // 
+            // w3_check2
+            // 
+            this.w3_check2.Location = new System.Drawing.Point(645, 303);
+            this.w3_check2.Name = "w3_check2";
+            this.w3_check2.Size = new System.Drawing.Size(60, 30);
+            this.w3_check2.TabIndex = 49;
+            this.w3_check2.Text = "check";
+            // 
+            // w3_check1
+            // 
+            this.w3_check1.Location = new System.Drawing.Point(645, 273);
+            this.w3_check1.Name = "w3_check1";
+            this.w3_check1.Size = new System.Drawing.Size(60, 30);
+            this.w3_check1.TabIndex = 48;
+            this.w3_check1.Text = "check";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1226, 374);
+            this.Controls.Add(this.w3_check2);
+            this.Controls.Add(this.w3_check1);
+            this.Controls.Add(this.w2_check2);
+            this.Controls.Add(this.w2_check1);
+            this.Controls.Add(this.w3_c1_3);
+            this.Controls.Add(this.w3_c1_2);
+            this.Controls.Add(this.w3_c1_1);
+            this.Controls.Add(this.w2_c3_3);
+            this.Controls.Add(this.w2_c3_2);
+            this.Controls.Add(this.w2_c3_1);
+            this.Controls.Add(this.w2_c2_3);
+            this.Controls.Add(this.w2_c2_2);
+            this.Controls.Add(this.w2_c2_1);
+            this.Controls.Add(this.w2_c1_3);
+            this.Controls.Add(this.w2_c1_2);
+            this.Controls.Add(this.w2_c1_1);
+            this.Controls.Add(this.w1_check2);
+            this.Controls.Add(this.w1_check1);
             this.Controls.Add(this.lbl_w3_time);
             this.Controls.Add(this.lbl_w2_time);
             this.Controls.Add(this.lbl_w1_time);
@@ -422,6 +604,24 @@
         private System.Windows.Forms.Label lbl_w1_time;
         private System.Windows.Forms.Label lbl_w2_time;
         private System.Windows.Forms.Label lbl_w3_time;
+        private System.Windows.Forms.Label w1_check2;
+        private System.Windows.Forms.Label w1_check1;
+        private System.Windows.Forms.Label w2_c1_3;
+        private System.Windows.Forms.Label w2_c1_2;
+        private System.Windows.Forms.Label w2_c1_1;
+        private System.Windows.Forms.Label w2_c2_3;
+        private System.Windows.Forms.Label w2_c2_2;
+        private System.Windows.Forms.Label w2_c2_1;
+        private System.Windows.Forms.Label w2_c3_3;
+        private System.Windows.Forms.Label w2_c3_2;
+        private System.Windows.Forms.Label w2_c3_1;
+        private System.Windows.Forms.Label w3_c1_3;
+        private System.Windows.Forms.Label w3_c1_2;
+        private System.Windows.Forms.Label w3_c1_1;
+        private System.Windows.Forms.Label w2_check2;
+        private System.Windows.Forms.Label w2_check1;
+        private System.Windows.Forms.Label w3_check2;
+        private System.Windows.Forms.Label w3_check1;
     }
 }
 

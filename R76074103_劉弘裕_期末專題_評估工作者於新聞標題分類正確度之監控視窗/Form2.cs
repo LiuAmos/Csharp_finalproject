@@ -20,12 +20,15 @@ namespace R76074103_劉弘裕_期末專題_評估工作者於新聞標題分類�
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            //form2命名
+            this.Text = "範例資料";
+
             SqlConnection cn = new SqlConnection();
             cn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;" +
                 "AttachDbFilename=|DataDirectory|Database1.mdf;" +
                 "Integrated Security=True";
             SqlDataAdapter da = new SqlDataAdapter
-                ("SELECT id,worker_id,title,time,clickbait,title_id FROM clickbait ORDER BY id", cn);
+                ("SELECT id,worker_id,title_id,title,time,clickbait FROM clickbait ORDER BY worker_id ", cn);
             DataSet ds = new DataSet();
             da.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];

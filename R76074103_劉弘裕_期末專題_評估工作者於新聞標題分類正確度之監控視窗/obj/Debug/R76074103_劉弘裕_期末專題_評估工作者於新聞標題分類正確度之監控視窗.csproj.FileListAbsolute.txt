@@ -31,3 +31,6 @@ C:\Users\User\Desktop\Csharp_finalproject\R76074103_劉弘裕_期末專題_評�
 C:\Users\User\Desktop\Csharp_finalproject\R76074103_劉弘裕_期末專題_評估工作者於新聞標題分類正確度之監控視窗\obj\Debug\R76074103_劉弘裕_期末專題_評估工作者於新聞標題分類正確度之監控視窗.pdb
 C:\Users\User\Desktop\Csharp_finalproject\R76074103_劉弘裕_期末專題_評估工作者於新聞標題分類正確度之監控視窗\bin\Debug\Database1.mdf
 C:\Users\User\Desktop\Csharp_finalproject\R76074103_劉弘裕_期末專題_評估工作者於新聞標題分類正確度之監控視窗\bin\Debug\Database1_log.ldf
+C:\Users\User\Desktop\Csharp_finalproject\R76074103_劉弘裕_期末專題_評估工作者於新聞標題分類正確度之監控視窗\obj\Debug\R76074103_劉弘裕_期末專題_評估工作者於新聞標題分類正確度之監控視窗.Form3.resources
+C:\Users\User\Desktop\Csharp_finalproject\R76074103_劉弘裕_期末專題_評估工作者於新聞標題分類正確度之監控視窗\obj\Debug\R76074103_劉弘裕_期末專題_評估工作者於新聞標題分類正確度之監控視窗.Form4.resources
+C:\Users\User\Desktop\Csharp_finalproject\R76074103_劉弘裕_期末專題_評估工作者於新聞標題分類正確度之監控視窗\obj\Debug\R76074103_劉弘裕_期末專題_評估工作者於新聞標題分類正確度之監控視窗.Form5.resources
